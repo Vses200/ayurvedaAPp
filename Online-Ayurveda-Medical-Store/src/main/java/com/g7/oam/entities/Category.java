@@ -1,8 +1,15 @@
 package com.g7.oam.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Category {
 
+	@Id
 	private String categoryId;
+	@Column
 	private String categoryName;
 
 	public Category() {

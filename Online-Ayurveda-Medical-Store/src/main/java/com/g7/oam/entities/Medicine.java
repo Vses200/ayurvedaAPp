@@ -2,13 +2,24 @@ package com.g7.oam.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Medicine {
 
+	@Id
 	private String medicineId;
+	@Column
 	private String medicineName;
+	@Column
 	private float medicineCost;
+	@Column
 	private LocalDate mfd;
+	@Column
 	private LocalDate expiryDate;
+	@Column
 	private Company company;
 	private Category category;
 

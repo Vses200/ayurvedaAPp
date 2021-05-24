@@ -1,7 +1,14 @@
 package com.g7.oam.entities;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "3")
 public class Customer extends User {
 
+	@Column
 	private String customerName;
 
 	public Customer(int userId, String password) {

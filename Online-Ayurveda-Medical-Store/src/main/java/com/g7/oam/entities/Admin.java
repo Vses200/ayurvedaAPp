@@ -1,7 +1,14 @@
 package com.g7.oam.entities;
 
-public class Admin extends User {
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
+@Entity
+@DiscriminatorValue(value = "2")
+public class Admin extends User {
+	
+	@Column
 	private String adminName;
 
 	public Admin(int userId, String password) {
