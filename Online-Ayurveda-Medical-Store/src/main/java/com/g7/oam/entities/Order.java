@@ -38,7 +38,7 @@ public class Order {
 	}
 
 	public Order(int orderId, LocalDate orderDate, List<Medicine> medicineList, LocalDate dispatchDate, float totalCost,
-			Customer customer, String status) {
+			Customer customer, OrderStatus status) {
 		super();
 		this.orderId = orderId;
 		this.orderDate = orderDate;
@@ -97,11 +97,11 @@ public class Order {
 		this.customer = customer;
 	}
 
-	public String getStatus() {
+	public OrderStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
 
