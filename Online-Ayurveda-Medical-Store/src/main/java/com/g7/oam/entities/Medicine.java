@@ -2,11 +2,13 @@ package com.g7.oam.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -29,7 +31,8 @@ public class Medicine {
 	private LocalDate expiryDate;
 	@Column
 	private Company company;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "categoryId", referencedColumnName = "medicineId")
 	private Category category;
 
 	public Medicine() {
