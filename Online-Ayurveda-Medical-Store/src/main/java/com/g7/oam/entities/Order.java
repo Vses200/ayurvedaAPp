@@ -30,7 +30,7 @@ public class Order {
 	@OneToOne
 	private Customer customer;
 	@Column
-	private String status;
+	private OrderStatus status;
 
 	public Order() {
 		super();
