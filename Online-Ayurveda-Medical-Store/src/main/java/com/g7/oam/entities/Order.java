@@ -19,6 +19,7 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int orderId;
+	@Column
 	@Temporal(TemporalType.DATE)
 	private LocalDate orderDate;
 	@OneToMany

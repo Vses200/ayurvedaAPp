@@ -21,8 +21,10 @@ public class Medicine {
 	private String medicineName;
 	@Column
 	private float medicineCost;
+	@Column
 	@Temporal(TemporalType.DATE)
 	private LocalDate mfd;
+	@Column
 	@Temporal(TemporalType.DATE)
 	private LocalDate expiryDate;
 	@Column
