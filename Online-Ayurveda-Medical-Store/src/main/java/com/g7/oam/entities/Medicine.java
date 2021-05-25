@@ -4,23 +4,30 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Medicine {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String medicineId;
 	@Column
 	private String medicineName;
 	@Column
 	private float medicineCost;
-	@Column
+	@Temporal(TemporalType.DATE)
 	private LocalDate mfd;
-	@Column
+	@Temporal(TemporalType.DATE)
 	private LocalDate expiryDate;
 	@Column
 	private Company company;
+	@OneToOne
 	private Category category;
 
 	public Medicine() {

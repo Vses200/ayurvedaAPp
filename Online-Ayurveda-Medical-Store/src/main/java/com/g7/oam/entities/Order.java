@@ -3,14 +3,33 @@ package com.g7.oam.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
 public class Order {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int orderId;
+	@Temporal(TemporalType.DATE)
 	private LocalDate orderDate;
+	@OneToMany
 	private List<Medicine> medicineList;
+	@Column
 	private LocalDate dispatchDate;
+	@Column
 	private float totalCost;
+	@OneToOne
 	private Customer customer;
+	@Column
 	private String status;
 
 	public Order() {
